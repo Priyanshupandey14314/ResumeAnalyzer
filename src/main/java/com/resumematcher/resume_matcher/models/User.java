@@ -1,9 +1,12 @@
 package com.resumematcher.resume_matcher.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jspecify.annotations.Nullable;
 
 @Entity
 @Table(name = "users")
@@ -20,5 +23,4 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
-
 }
