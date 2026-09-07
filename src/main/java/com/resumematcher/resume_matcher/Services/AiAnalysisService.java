@@ -44,6 +44,13 @@ public class AiAnalysisService {
         analysis.setMskills(toJson(result.getMissingSkills()));
         analysis.setSuggestions(toJson(result.getSuggestions()));
         return analysisRepo.save(analysis);
+
+    }
+    public List<Analysis> getHistory(String userEmail) {
+        User user = userRepo.findByEmail(userEmail)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        return analysisRepo.findByUserOrderByCreatedAtDesc(user);
     }
 
 

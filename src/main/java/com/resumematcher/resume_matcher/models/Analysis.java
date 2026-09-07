@@ -19,6 +19,8 @@ public class Analysis {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String restext;
     @Lob
     @Column(columnDefinition = "TEXT")
