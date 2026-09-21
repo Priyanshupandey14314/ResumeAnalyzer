@@ -30,7 +30,7 @@ public class AnalysisController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/history")
+    @GetMapping("/api/history")
     public ResponseEntity<List<Analysis>> history(@AuthenticationPrincipal UserDetails userDetails) {
         List<Analysis> history = analysisService.getHistory(userDetails.getUsername());
         return ResponseEntity.ok(history);
